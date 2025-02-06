@@ -24,6 +24,11 @@ body {
       letter-spacing: 0.08em;
       text-transform: uppercase;
 
+      @include media(640px) {
+        font-size: 12px;
+        padding: 10px 8px 22px;
+      }
+
       &::after {
         position: absolute;
         content: "";
@@ -47,6 +52,11 @@ body {
   .control {
     height: 40px;
     display: flex;
+
+    @include media(640px) {
+      display: none;
+    }
+
     button {
       padding: 0;
       width: 56px;
@@ -123,8 +133,17 @@ body {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 16px 24px;
 
+      @include media(840px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include media(640px) {
+        padding: 16px 0;
+      }
+
       &.for-table {
         display: block;
+        overflow: auto;
       }
     }
 
@@ -173,6 +192,7 @@ button {
   gap: 8px;
   background-color: #fff;
   transition: background-color 0.3s;
+
   &:hover {
     background-color: #BDBDBD;
   }
@@ -195,6 +215,8 @@ button {
 }
 
 .table {
+  min-width: 800px;
+
   &__th, &__td {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -250,6 +272,7 @@ button {
 
     > li {
       margin-bottom: -1px;
+
       > a {
         color: #424242;
         font-size: 16px;
